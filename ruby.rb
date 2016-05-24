@@ -6,9 +6,6 @@ class ExampleClass
 
   ThenAnyErrorClass = Class.new(StandardError)
 
-  attr_reader :stuff, :things
-  private :stuff, :things
-
   def initialize(stuff, things)
     @stuff, @things = stuff, things
   end
@@ -259,4 +256,16 @@ class ExampleClass
     if_it_can_be_private(make_it_private)
   end
 
+  # Prefer long-form attr_readers over the following hack.
+  #
+  # attr_reader :stuff, :things
+  # private :stuff, :things
+
+  def stuff
+    @stuff
+  end
+
+  def things
+    @things
+  end
 end
