@@ -13,6 +13,7 @@ Welcome to our style guide for writing consistant and readable JavaScript. If th
   * [Strings](#strings)
   * [Curly brackets](#curly-brackets)
   * [Var statement](#var-statement)
+  * [Trailing commas](#trailing-commas)
 * [Naming conventions](#naming-conventions)
 * [Conditional statements](#conditional-statements)
 * [Miscellaneous](#miscellaneous)
@@ -213,6 +214,31 @@ for guidance on whether or not you can use one in your situation please refer to
 Always declare variables with the `var` keyword, as reluctance to do so can lead to variables accidentaly polluting the global scope.
 Keep a one to one relationship between variable statements and the var keyword, as doing so makes it easier to re-order lines in both your editor and in version control.
 
+### Trailing commas
+
+The final element in a multi-line object should have a trailing comma.
+
+```js
+var HotelResultsTracking = (function (Backbone) {
+  'use strict';
+
+  return Backbone.Model.extend({
+    initialize: function () {
+      this.track();
+    },
+
+    track: function () {
+      Tracking.track({
+        category: 'Hotel Result',
+        action: 'Results Detail',
+        label: 'Number of results returned',
+        customData: this.toJSON(), // <- trailing comma
+      });
+    }, // <- trailing comma
+  });
+}(Backbone));
+```
+
 ## Naming conventions
 
 Our naming convention for variables, properties and function names is [camelCase](https://en.wikipedia.org/wiki/CamelCase).
@@ -272,4 +298,3 @@ Sites that can help to guide you towards what you can and cannot use include:
 - [ECMAScript compat-tables (ES5)](http://kangax.github.io/compat-table/es5/)
 - [You Might Not Need jQuery](http://youmightnotneedjquery.com/)
 - [caniuse](http://caniuse.com/)
-
