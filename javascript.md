@@ -23,9 +23,17 @@ Welcome to our style guide for writing consistant and readable JavaScript. If th
 
 All new JavaScript files should be written using [BackboneJS](http://backbonejs.org/) and should fall into the structure of models, views and collections.
 
+### ReactJS
+
+React is currently in use within the Careers application, all scripts in there should use the React stack.
+
 ### Jasmine Tests
 
 All Backbone models and collections should be covered with an associated [Jasmine](http://jasmine.github.io/) test. For more information on this please feel free to grab a developer from the Frontend team.
+
+### Jest Tests
+
+All React code should be unit tested.
 
 ## Formatting
 
