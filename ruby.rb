@@ -142,6 +142,10 @@ class ExampleClass
     hash.fetch(:one, 1)
   end
 
+  def use_block_syntax_to_avoid_evaluating_complex_defaults_every_time
+    hash.fetch(:one) { ComplexDefaultCode.here }
+  end
+
   def use_block_syntax_for_errors
     hash.fetch(:one) { fail "It's not working" }
   end
